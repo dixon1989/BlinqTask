@@ -1,14 +1,40 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import React from 'react';
+import Modal from 'react-modal';
 
 export default function Home() {
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  }
+
+  const closeModal = () => {
+    setIsOpen(false);
+  }
 
   const registerEmail = (event: { preventDefault: () => void }) => {
     event.preventDefault() // don't redirect the page
     // where we'll add our form logic
+    openModal()
   }
+
   return (
+    <React.Fragment>
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
@@ -42,5 +68,25 @@ export default function Home() {
           </div>
       </footer>
     </div>
+    <div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h2 ref={(_subtitle) => (_subtitle = _subtitle)}>Hello</h2>
+        <button onClick={closeModal}>close</button>
+        <div>I am a modal</div>
+        <form>
+          <input />
+          <button>tab navigation</button>
+          <button>stays</button>
+          <button>inside</button>
+          <button>the modal</button>
+        </form>
+      </Modal>
+    </div>
+    </React.Fragment>
   )
 }
