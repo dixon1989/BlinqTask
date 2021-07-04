@@ -40,6 +40,7 @@
   background-color: #4CAF50;
   border: none;
   color: white;
+  width: 70%;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -149,6 +150,41 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.modal {
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.modalHeader{
+  padding-bottom: 2rem;
+}
+
+.line {
+  border-color: black;
+  width: 10%;
+}
+
+.inputContent {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.input {
+    padding: 15px;
+    display: block;
+    border: none;
+    border: 1px solid #ccc;
+    width: 70%;
+}
+
+.modalClose {
+  display: flex;
+  justify-content: flex-end;
 }
 
 @media (max-width: 600px) {
