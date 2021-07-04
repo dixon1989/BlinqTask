@@ -48,6 +48,9 @@ let [winWidth] = useWindowSize();
   }
 
   const closeModal = () => {
+    setErrorMessage('')
+    setLoading(false)
+    setIsSuccess(false)
     setIsOpen(false);
   }
 
